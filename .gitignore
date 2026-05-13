@@ -1,0 +1,50 @@
+# Built variants
+*.apk
+*.aar
+*.ap_
+*.aab
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+out/
+
+# Gradle files
+.gradle/
+build/
+
+# XML files from IntelliJ IDEA that shouldn't be shared
+.idea/assetWizardSettings.xml
+.idea/caches
+.idea/libraries
+.idea/modules.xml
+.idea/navEditor.xml
+.idea/workspace.xml
+.idea/shelf
+.idea/deploymentTargetSelector.xml
+
+# Built-in native build files
+.externalNativeBuild
+.cxx/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log files
+*.log
+
+# Android Studio captures
+captures/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Project-specific
+*.iml

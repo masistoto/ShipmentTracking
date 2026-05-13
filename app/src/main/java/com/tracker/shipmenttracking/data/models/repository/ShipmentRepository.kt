@@ -6,6 +6,7 @@ import com.tracker.shipmenttracking.data.models.data.remote.ShipmentApi
 import com.tracker.shipmenttracking.data.models.local.ShipmentCache
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
 interface ShipmentRepository {
     fun getShipments(): Flow<Result<ShipmentsListResponse>>

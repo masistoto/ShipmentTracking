@@ -1,13 +1,14 @@
 package com.tracker.shipmenttracking.data.models
 
+import kotlinx.serialization.InternalSerializationApi
 import kotlinx.serialization.Serializable
 
-@Serializable
+@InternalSerializationApi @Serializable
 data class ShipmentsListResponse(
     val shipments: List<ShipmentItem>
 )
 
-@Serializable
+@InternalSerializationApi @Serializable
 data class ShipmentItem(
     val id: String,
     val carrier: Carrier,
@@ -19,25 +20,25 @@ data class ShipmentItem(
     val estimatedDeliveryAt: String
 )
 
-@Serializable
+@InternalSerializationApi @Serializable
 data class Carrier(
     val code: String,
     val name: String
 )
 
-@Serializable
+@InternalSerializationApi @Serializable
 data class Status(
     val code: String,
     val label: String
 )
 
-@Serializable
+@InternalSerializationApi @Serializable
 data class Location(
     val city: String,
     val country: String
 )
 
-@Serializable
+@InternalSerializationApi @Serializable
 data class ShipmentDetail(
     val id: String,
     val carrier: Carrier,
@@ -48,7 +49,7 @@ data class ShipmentDetail(
     val statuses: List<StatusEvent>
 )
 
-@Serializable
+@InternalSerializationApi @Serializable
 data class StatusEvent(
     val time: String,
     val code: String,

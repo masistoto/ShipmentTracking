@@ -7,6 +7,7 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.first
+import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -40,7 +41,7 @@ class ShipmentCacheImpl @Inject constructor(
 
     override suspend fun cacheShipments(shipments: ShipmentsListResponse) {
         context.shipmentDataStore.edit { preferences ->
-            val json = Json.encodeToString(ShipmentsListResponse.serializer(), shipments)
+            val json = Json.encodeToString( shipments)
             preferences[SHIPMENTS_CACHE_KEY] = json
             preferences[CACHE_TIMESTAMP_KEY] = System.currentTimeMillis().toString()
         }

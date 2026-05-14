@@ -5,13 +5,31 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.ErrorOutline
 import androidx.compose.material.icons.filled.NetworkLocked
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Search
-import androidx.compose.material3.*
+import androidx.compose.material3.Button
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Divider
+import androidx.compose.material3.DividerDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FilterChip
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -22,6 +40,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.tracker.shipmenttracking.data.models.ShipmentItem
 import com.tracker.shipmenttracking.viewmodels.ShipmentsListViewModel
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ShipmentsListScreen(
     viewModel: ShipmentsListViewModel = hiltViewModel(),
@@ -99,7 +118,7 @@ fun ShipmentsListScreen(
                     if (state.isOffline) {
                         OfflineState()
                     } else {
-                        ErrorState(error = state.error, onRetry = { viewModel.loadShipments() })
+                        ErrorState(error = state.error!!, onRetry = { viewModel.loadShipments() })
                     }
                 }
                 filteredShipments.isEmpty() -> {
@@ -216,7 +235,11 @@ fun ShipmentCard(
                 StatusBadge(status = shipment.lastStatus.label)
             }
 
-            Divider(modifier = Modifier.padding(vertical = 8.dp))
+            HorizontalDivider(
+                modifier = Modifier.padding(vertical = 8.dp),
+                thickness = DividerDefaults.Thickness,
+                color = DividerDefaults.color
+            )
 
             Text(
                 text = "Tracking: ${shipment.trackingNumber}",

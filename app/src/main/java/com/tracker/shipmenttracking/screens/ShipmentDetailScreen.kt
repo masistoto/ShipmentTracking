@@ -4,8 +4,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -17,6 +19,7 @@ import com.tracker.shipmenttracking.data.models.ShipmentDetail
 import com.tracker.shipmenttracking.data.models.StatusEvent
 import com.tracker.shipmenttracking.viewmodels.ShipmentDetailViewModel
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ShipmentDetailScreen(
     viewModel: ShipmentDetailViewModel = hiltViewModel(),
@@ -33,7 +36,7 @@ fun ShipmentDetailScreen(
             title = { Text("Shipment Details") },
             navigationIcon = {
                 IconButton(onClick = onBackPressed) {
-                    Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                    Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
                 }
             },
             colors = TopAppBarDefaults.topAppBarColors(
@@ -148,7 +151,11 @@ fun DetailContent(detail: ShipmentDetail) {
                         label = "To",
                         location = "${detail.destination.city}, ${detail.destination.country}"
                     )
-                    Divider(modifier = Modifier.padding(vertical = 8.dp))
+                    HorizontalDivider(
+                        modifier = Modifier.padding(vertical = 8.dp),
+                        thickness = DividerDefaults.Thickness,
+                        color = DividerDefaults.color
+                    )
                     RouteRow(
                         label = "Est. Delivery",
                         location = formatDetailDate(detail.estimatedDeliveryAt)
@@ -222,11 +229,10 @@ fun StatusTimelineItem(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             if (!isFirst) {
-                Divider(
+                HorizontalDivider(
                     modifier = Modifier
                         .height(8.dp)
-                        .width(2.dp),
-                    color = MaterialTheme.colorScheme.primary.copy(alpha = 0.3f)
+                        .width(2.dp), thickness = DividerDefaults.Thickness, color = MaterialTheme.colorScheme.primary.copy(alpha = 0.3f)
                 )
             }
             Surface(
@@ -239,11 +245,10 @@ fun StatusTimelineItem(
                 Box(contentAlignment = Alignment.Center) {}
             }
             if (!isLast) {
-                Divider(
+                HorizontalDivider(
                     modifier = Modifier
                         .height(8.dp)
-                        .width(2.dp),
-                    color = MaterialTheme.colorScheme.primary.copy(alpha = 0.3f)
+                        .width(2.dp), thickness = DividerDefaults.Thickness, color = MaterialTheme.colorScheme.primary.copy(alpha = 0.3f)
                 )
             }
         }

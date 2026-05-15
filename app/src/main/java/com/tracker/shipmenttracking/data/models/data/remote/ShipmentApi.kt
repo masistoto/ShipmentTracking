@@ -5,10 +5,10 @@ import com.tracker.shipmenttracking.data.models.ShipmentsListResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-public interface ShipmentApi {
-    @GET("shipments")
+interface ShipmentApi {
+    @GET("f2ea-4a6b-4c41-a12b")
     suspend fun getShipments(): ShipmentsListResponse
 
-    @GET("shipments/{shipmentId}")
+    @GET("shipments/{id}")
     suspend fun getShipmentDetail(@Path("id") shipmentId: String): ShipmentDetail
 }

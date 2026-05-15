@@ -38,6 +38,12 @@ data class Location(
 )
 
 @Serializable
+data class ShipmentsDetailsResponse(
+    val shipmentsDetails: List<ShipmentDetail>
+)
+
+
+@Serializable
 data class ShipmentDetail(
     val id: String,
     val carrier: Carrier,

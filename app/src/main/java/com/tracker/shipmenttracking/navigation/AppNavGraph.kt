@@ -25,17 +25,7 @@ fun AppNavGraph() {
             )
         }
 
-//        composable(
-//            route = Screen.ShipmentDetail.route
-//        ) {
-//            ShipmentDetailScreen(
-//                onBackPressed = { navController.popBackStack() }
-//            )
-//        }
-
-        // TODO: test of back navigation works
-        composable("shipment_detail/{id}") { backStackEntry ->
-            val shipmentId = backStackEntry.arguments?.getString("id")
+        composable("shipment_detail/{id}") { _ ->
             ShipmentDetailScreen(
                 onBackPressed = { navController.popBackStack() }
             )

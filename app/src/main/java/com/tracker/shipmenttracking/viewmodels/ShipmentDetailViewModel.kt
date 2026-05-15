@@ -19,7 +19,7 @@ class ShipmentDetailViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-    private val shipmentId: String = checkNotNull(savedStateHandle["shipmentId"])
+    private val id: String = checkNotNull(savedStateHandle["id"])
 
     private val _state = MutableStateFlow(ShipmentDetailState())
     val state: StateFlow<ShipmentDetailState> = _state.asStateFlow()
@@ -31,7 +31,7 @@ class ShipmentDetailViewModel @Inject constructor(
     fun loadShipmentDetail() {
         viewModelScope.launch {
             _state.update { it.copy(isLoading = true, error = null) }
-            repository.getShipmentDetail(shipmentId).collect { result ->
+            repository.getShipmentDetail(id).collect { result ->
                 result.onSuccess { detail ->
                     _state.update {
                         it.copy(

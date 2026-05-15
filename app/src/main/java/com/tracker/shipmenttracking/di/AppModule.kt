@@ -1,6 +1,7 @@
 package com.tracker.shipmenttracking.di
 
 import android.content.Context
+import com.tracker.shipmenttracking.ShipmentTrackingApp.Companion.SP_TRACKER_APP_URI
 import com.tracker.shipmenttracking.data.models.data.remote.ShipmentApi
 import com.tracker.shipmenttracking.data.models.local.ShipmentCache
 import com.tracker.shipmenttracking.data.models.local.ShipmentCacheImpl
@@ -38,7 +39,7 @@ object AppModule {
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("BASE_URL") // TODO: Get API base url from Offerzen
+            .baseUrl(SP_TRACKER_APP_URI)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

@@ -42,7 +42,6 @@ data class ShipmentsDetailsResponse(
     val shipmentsDetails: List<ShipmentDetail>
 )
 
-
 @Serializable
 data class ShipmentDetail(
     val id: String,

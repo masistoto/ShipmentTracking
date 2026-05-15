@@ -1,4 +1,4 @@
-package com.tracker.shipmenttracking.screens
+package com.tracker.shipmenttracking.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

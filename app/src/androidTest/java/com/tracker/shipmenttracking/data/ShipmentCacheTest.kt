@@ -7,7 +7,7 @@ import com.tracker.shipmenttracking.data.models.Location
 import com.tracker.shipmenttracking.data.models.ShipmentItem
 import com.tracker.shipmenttracking.data.models.ShipmentsListResponse
 import com.tracker.shipmenttracking.data.models.Status
-import com.tracker.shipmenttracking.data.models.local.ShipmentCacheImpl
+import com.tracker.shipmenttracking.data.local.ShipmentCacheImpl
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertNull
 import kotlinx.coroutines.runBlocking

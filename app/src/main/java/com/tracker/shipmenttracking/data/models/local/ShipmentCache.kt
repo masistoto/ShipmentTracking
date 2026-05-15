@@ -1,4 +1,4 @@
-package com.tracker.shipmenttracking.data.models.local
+package com.tracker.shipmenttracking.data.local
 
 import com.tracker.shipmenttracking.data.models.ShipmentsListResponse
 
@@ -7,7 +7,6 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.first
-import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import javax.inject.Inject
 import javax.inject.Singleton

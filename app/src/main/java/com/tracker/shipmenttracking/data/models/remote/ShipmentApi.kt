@@ -1,4 +1,4 @@
-package com.tracker.shipmenttracking.data.models.data.remote
+package com.tracker.shipmenttracking.data.remote
 
 import com.tracker.shipmenttracking.data.models.ShipmentDetail
 import com.tracker.shipmenttracking.data.models.ShipmentsDetailsResponse

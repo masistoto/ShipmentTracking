@@ -1,10 +1,10 @@
-package com.tracker.shipmenttracking.data.models.repository
+package com.tracker.shipmenttracking.data.repository
 
 import com.tracker.shipmenttracking.data.models.ShipmentDetail
 import com.tracker.shipmenttracking.data.models.ShipmentsListResponse
-import com.tracker.shipmenttracking.data.models.data.remote.MockRestAPIServer
-import com.tracker.shipmenttracking.data.models.data.remote.ShipmentApi
-import com.tracker.shipmenttracking.data.models.local.ShipmentCache
+import com.tracker.shipmenttracking.data.remote.MockRestAPIServer
+import com.tracker.shipmenttracking.data.remote.ShipmentApi
+import com.tracker.shipmenttracking.data.local.ShipmentCache
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject

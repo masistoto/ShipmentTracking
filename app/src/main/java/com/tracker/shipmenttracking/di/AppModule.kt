@@ -2,11 +2,11 @@ package com.tracker.shipmenttracking.di
 
 import android.content.Context
 import com.tracker.shipmenttracking.ShipmentTrackingApp.Companion.SP_TRACKER_APP_URI
-import com.tracker.shipmenttracking.data.models.data.remote.ShipmentApi
-import com.tracker.shipmenttracking.data.models.local.ShipmentCache
-import com.tracker.shipmenttracking.data.models.local.ShipmentCacheImpl
-import com.tracker.shipmenttracking.data.models.repository.ShipmentRepository
-import com.tracker.shipmenttracking.data.models.repository.ShipmentRepositoryImpl
+import com.tracker.shipmenttracking.data.local.ShipmentCache
+import com.tracker.shipmenttracking.data.local.ShipmentCacheImpl
+import com.tracker.shipmenttracking.data.remote.ShipmentApi
+import com.tracker.shipmenttracking.data.repository.ShipmentRepository
+import com.tracker.shipmenttracking.data.repository.ShipmentRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

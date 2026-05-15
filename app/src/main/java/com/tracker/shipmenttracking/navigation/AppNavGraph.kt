@@ -5,8 +5,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.tracker.shipmenttracking.com.tracker.shipmenttracking.navigation.Screen
-import com.tracker.shipmenttracking.screens.ShipmentDetailScreen
-import com.tracker.shipmenttracking.screens.ShipmentsListScreen
+import com.tracker.shipmenttracking.ui.screens.ShipmentDetailScreen
+import com.tracker.shipmenttracking.ui.screens.ShipmentsListScreen
 
 @Composable
 fun AppNavGraph() {

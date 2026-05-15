@@ -3,7 +3,7 @@ package com.tracker.shipmenttracking.viewmodels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tracker.shipmenttracking.data.models.ShipmentItem
-import com.tracker.shipmenttracking.data.models.repository.ShipmentRepository
+import com.tracker.shipmenttracking.data.repository.ShipmentRepository
 import com.tracker.shipmenttracking.ui.states.ShipmentsListState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

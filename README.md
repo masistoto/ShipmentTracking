@@ -31,21 +31,28 @@ private val httpClient = HttpClient {
 }
 
 private const val BASE_URL = "https://your-api-endpoint.com/api"
-💻 Usage
+
+Usage
 Accessing Shipments List
 Kotlin
+
 ShipmentsListScreen(
     onNavigateToDetail = { shipmentId ->
         navController.navigate("detail/$shipmentId")
     }
 )
+
 Accessing Shipment Details
+
 Kotlin
+
 ShipmentDetailScreen(
     shipmentId = "shp_1001",
     onNavigateBack = { navController.popBackStack() }
 )
+
 Manual Refresh
+
 The shipments list includes a refresh button in the top app bar. Tap to manually sync with the server.
 
 Offline Mode

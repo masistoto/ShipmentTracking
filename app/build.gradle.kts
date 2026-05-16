@@ -62,24 +62,18 @@ android {
 
 dependencies {
     // Core Android
-    implementation("androidx.core:core-ktx:1.18.0")
-    implementation("androidx.appcompat:appcompat:1.7.1")
-    implementation("com.google.android.material:material:1.14.0")
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
 
     // Compose
-    val composeBom = platform(libs.androidx.compose.bom)
-    implementation(composeBom)
-    androidTestImplementation(composeBom)
-    //implementation(libs.androidx.ui)
+    implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.material3)
-    //implementation(libs.androidx.compose.material.icons.extended)
     implementation(libs.androidx.glance.appwidget)
     implementation(libs.androidx.glance.material3)
     implementation(libs.kotlin.stdlib)
     implementation(libs.kotlinx.coroutines.android)
-
     implementation(libs.androidx.activity.compose)
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.compose.runtime.livedata)
@@ -126,5 +120,6 @@ dependencies {
     testImplementation(libs.mockito.core)
     testImplementation(libs.jetbrains.kotlinx)
     testImplementation(libs.io.ktor)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui)
 }
